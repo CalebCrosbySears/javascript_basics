@@ -89,97 +89,45 @@
                 document.getElementById("memberName-1").innerHTML += members[i] + "<br>";
             }
 
+            // adds a member to the array list.
             function joinClub(p1) {
                 document.getElementById("memberName-1").innerHTML += p1 + "<br>";
                 return members.push(p1);
             }
 
-            if(document.getElementById('joinBtn').clicked == true && document.getElementById("autocomplete").getAttribute() != null)
+            if(document.getElementById('joinBtn').onclick == true )
             {
                 var newMember = document.getElementById("autocomplete").getAttribute();
                 alert("button was clicked");
                 joinClub(newMember);
             }
         </script>
-
-
-
-
     </div>
-</div>
-
-
-
-
-
-<!-- Highlight / Error -->
-<h2 class="selections">Highlight / Error</h2>
-<div class="ui-widget">
-	<div class="ui-state-highlight ui-corner-all" style="margin-top: 20px; padding: 0 .7em;">
-		<p><span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em;"></span>
-		<strong>Hey!</strong> Sample ui-state-highlight style.</p>
-	</div>
-</div>
-<br>
-<div class="ui-widget">
-	<div class="ui-state-error ui-corner-all" style="padding: 0 .7em;">
-		<p><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
-		<strong>Alert:</strong> Sample ui-state-error style.</p>
-	</div>
 </div>
 
 <script src="external/jquery/jquery.js"></script>
 <script src="jquery-ui.js"></script>
 <script>
 
-$( "#accordion" ).accordion();
-
-
-
 var availableTags = [
-	"ActionScript",
-	"AppleScript",
-	"Asp",
-	"BASIC",
-	"C",
-	"C++",
-	"Clojure",
-	"COBOL",
-	"ColdFusion",
-	"Erlang",
-	"Fortran",
-	"Groovy",
-	"Haskell",
-	"Java",
-	"JavaScript",
-	"Lisp",
-	"Perl",
-	"PHP",
-	"Python",
-	"Ruby",
-	"Scala",
-	"Scheme"
+	"John",
+	"Maggie",
+	"Joe",
+	"King",
+	"Matt",
+	"John",
+	"Matthew",
+	"Gunay",
+	"Chris",
+	"Eric"
 ];
 $( "#autocomplete" ).autocomplete({
 	source: availableTags
 });
 
-
-
 $( "#button" ).button();
-$( "#button-icon" ).button({
-	icon: "ui-icon-gear",
-	showLabel: false
-});
-
-
-$( "#controlgroup" ).controlgroup();
-
-
 
 $( "#tabs" ).tabs();
-
-
 
 $( "#dialog" ).dialog({
 	autoOpen: false,
@@ -206,7 +154,10 @@ $( "#Join-link" ).click(function( event ) {
 	event.preventDefault();
 });
 
-
+$( "#joinBtn" ).click(function ( event ) {
+    $( "#dialog" ).dialog( "open" );
+    event.preventDefault();
+});
 
 $( "#datepicker" ).datepicker({
 	inline: true
@@ -214,11 +165,6 @@ $( "#datepicker" ).datepicker({
 
 
 $( "#tooltip" ).tooltip();
-
-
-
-$( "#selectmenu" ).selectmenu();
-
 
 // Hover states on the static widgets
 $( "#Join-link, #icons li" ).hover(
